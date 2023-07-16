@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header/Header';
-import Cart from './Components/layout/Cart';
+import Header from './Components/header/Header';
+
 
 function App() {
   return (

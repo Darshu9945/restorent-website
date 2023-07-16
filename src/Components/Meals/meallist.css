@@ -1,0 +1,20 @@
+.main{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+
+}
+.meals{
+padding-left: 1.5rem;
+padding-right: 1.5rem;    
+}
+.meals>.col{
+    color: brown;
+    font-weight: bolder;
+}

@@ -1,7 +1,5 @@
 .header{
     background-color: rgb(69, 68, 68);
-    height: 60vh;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 .forhead{

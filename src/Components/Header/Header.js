@@ -1,7 +1,8 @@
 import React from 'react'
 import './header.css'
-import Cart from '../layout/Cart'
-import Summary from './Summary'
+import Cart from './Cart'
+import Summary from '../Meals/Summary'
+import Meallist from '../Meals/Meallist'
 const Header = () => {
   return (
     <div className='bagroundimage'>
@@ -14,6 +15,7 @@ const Header = () => {
         <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?cs=srgb&dl=pexels-craig-adderley-1563356.jpg&fm=jpg" alt="gallery" />
         </div>
         <Summary></Summary>
+        <Meallist></Meallist>
     </header>
     </div>
   )
