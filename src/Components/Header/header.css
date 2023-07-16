@@ -1,23 +1,23 @@
-.bagroundimage{
-    background-image: url(https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?cs=srgb&dl=pexels-craig-adderley-1563356.jpg&fm=jpg);
-    width: 100%;
-    height: 50vh;
-}
 .header{
-    display: flex;
-    background-color: aquamarine;
-    justify-content: space-around;
-    background-color: brown;
-   
+    background-color: rgb(69, 68, 68);
+    height: 60vh;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
-
 .forhead{
-   
-    float:right;
-    padding: 1rem;
-
-    font-size: 2rem;
+    background-color: brown;
+    display: flex;
+   width: 100%;
+    height: 5rem;
+    justify-content: space-between;
     color: white;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 10;
     
 }
 .cart{
@@ -25,4 +25,17 @@
     justify-content: center;
     align-items: center;
   
+}
+.image{
+    width: 100%;
+    height: 25rem;
+    z-index: 0;
+    overflow: hidden;
+}
+.image img{
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+    
 }

@@ -1,18 +1,20 @@
 import React from 'react'
 import './header.css'
 import Cart from '../layout/Cart'
+import Summary from './Summary'
 const Header = () => {
   return (
     <div className='bagroundimage'>
-    <nav className='header'>
+    <header className='header'>
         <div className='forhead'>
-<h2>rectmeals</h2>
+           <h1>rectmeals</h1>
+           <Cart></Cart>
         </div>
-        <div className='cart'>
-        <Cart></Cart>
+        <div className='image'>
+        <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?cs=srgb&dl=pexels-craig-adderley-1563356.jpg&fm=jpg" alt="gallery" />
         </div>
-      
-    </nav>
+        <Summary></Summary>
+    </header>
     </div>
   )
 }
