@@ -1,0 +1,44 @@
+.cartitem{
+    position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+    
+}
+@media (min-width: 768px) {
+    .cartitem {
+      width: 40rem;
+      left: calc(50% - 20rem);
+    }
+  }
+
+
+  
+.name{
+    font-weight: bold;
+}
+.matter{
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    float: right;
+}
+.button button{
+    border-radius: 20px;
+    padding: 0.5rem 1.8rem;
+    margin: 0.5rem;
+}
+.button button:nth-child(2){
+background-color: brown;
+color: aliceblue;
+}
+.button button:nth-child(1){
+    background-color:white ;
+    color: brown;
+    }

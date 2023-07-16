@@ -10,7 +10,9 @@ const Mealform = () => {
             label:"Amount",
             type:"number",
             max:4,
-            min:1
+            min:1,
+            count:1,
+            defaultValue:1
         }
       }></Input>
       <button className={classes.button}> +  Add</button>
