@@ -1,16 +1,16 @@
 import logo from './logo.svg';
-import './App.css';
-import Header from './Components/header/Header';
+import classes from './App.module.css';
+import Header from './Components/header/header';
+
 
 
 function App() {
   return (
-    <div className="App">
-    <Header></Header>
- 
+    <div className={classes.App}>
+    <Header/>
+
     </div>
-    
-  );
+  )
 }
 
 export default App;

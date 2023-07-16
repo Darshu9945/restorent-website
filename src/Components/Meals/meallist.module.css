@@ -1,0 +1,9 @@
+.meallist{
+    background-color: aliceblue;
+    margin: auto;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}

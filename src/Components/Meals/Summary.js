@@ -1,9 +1,9 @@
 import React from 'react'
-import './summary.css'
+import classes from './summary.module.css'
 const Summary = () => {
   return (
     <React.Fragment>
-        <div className='forsummary'>
+        <div className={classes.forsummary}>
             <h1>Delicious Food,Deliver To You</h1>
             <p>Choose your fevorite meal from our board 
                 selection of aveilable meal and

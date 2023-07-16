@@ -1,0 +1,14 @@
+.main{
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(69, 68, 68);;
+  
+}
+
+.col{
+    color: brown;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
