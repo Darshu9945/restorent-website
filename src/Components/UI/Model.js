@@ -6,7 +6,7 @@ import  ReactDOM  from 'react-dom'
  }
  const Mealcartoverlay=(props)=>{
   return (
-    <div>{props.children}</div>
+    <div className={classes.cartitem}>{props.children}</div>
   )
  }
 

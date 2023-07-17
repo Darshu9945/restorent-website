@@ -1,34 +1,51 @@
 import React from 'react'
 import classes from'./cartitem.module.css'
 import Model from '../UI/Model'
+import { useContext } from 'react'
+import Contextdata from '../../Contextapi/Creatcontext'
 const Cartitem = (props) => {
-    const cartitem =[{
-        id: 'm1',
-        name: 'Sushi',
-        description: 'Finest fish and veggies',
-        price: 22.99,
-      }]
+    const ctx=useContext(Contextdata)
+   
+        const setamout=ctx.item.length>0
+
+     
   return (
-    <Model onClick={props.onClose}>
-    <div className={classes.cartitem}>
-        {cartitem.map((item)=>{
+    
+    <div >
+         
+        <Model onClick={props.onClose}>
+        <div className={classes.cartdata} >
+        {ctx.item.map((item)=>{
                 return( 
-                <div className={classes.name}>
-                {item.name}
-                <header className={classes.matter}>
-                    <h2>Total Amount</h2>
-                    <h2>{item.price}</h2>
-                </header>
-                <div className={classes.button}>
-                    <button onClick={props.onClose}>Close</button>
-                    <button>Order</button>
-                </div>
+                   < React.Fragment>
+                <div className={classes.cartitem1}>
+                    <section>
+                     <p className={classes.name}>
+                          {item.name}
+                      </p>
+                      <span className={classes.price}>{` $ ${item.price}`}</span>
+                      <span className={classes.count}>x1</span>
+                    </section>
+                    <section>
+                        <button>+</button>
+                        <button>-</button>
+                    </section>
                </div>
+           </React.Fragment>
                )
             })
-        }
+        } </div>
+        <header className={classes.matter}>
+                    <h2>Total Amount</h2>
+                    <h2>{ctx.Totalamount.toFixed(2)}</h2>
+                </header>
+         <div className={classes.button}>
+               <button onClick={props.onClose}>Close</button>
+               {setamout && <button>Order</button>}
+           </div>
+           </Model>
     </div>
-    </Model>
+   
   )
 }
 

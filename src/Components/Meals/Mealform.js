@@ -1,10 +1,23 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import Input from '../UI/Input'
 import classes from'./mealform.module.css'
-const Mealform = () => {
+
+const Mealform = (props) => {
+ const updateamountref=useRef()
+ const submithandler=(event)=>{
+  event.preventDefault()
+  console.log(updateamountref)
+    const updatedamount=updateamountref.current.value
+     const  updatedamountnumber=+updatedamount
+   props.onAddref(updatedamountnumber)
+ }
+ 
   return (
     <div>
-      <Input input={
+      <form onSubmit={submithandler}>
+      <Input 
+      ref={updateamountref}
+      input={
         {
             id:"amount",
             label:"Amount",
@@ -15,7 +28,8 @@ const Mealform = () => {
             defaultValue:1
         }
       }></Input>
-      <button className={classes.button}> +  Add</button>
+      <button type='submit' className={classes.button}> +  Add</button>
+      </form>
     </div>
   )
 }

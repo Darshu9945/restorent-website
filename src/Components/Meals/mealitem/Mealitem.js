@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from'./mealitem.module.css'
 import Mealform from '../Mealform'
+import Contextdata from '../../../Contextapi/Creatcontext'
 const Mealitem = (props) => {
+  const ctx=useContext(Contextdata)
+  const onAddrefhandler=(amount)=>{
+    ctx.additem({
+      id:props.id,
+      name:props.item.name,
+      amount:amount,
+      price:props.item.price
+    })
+
+  }
   return (
     <div className={classes.main}>
        <div className={classes.meals}>
@@ -10,7 +21,7 @@ const Mealitem = (props) => {
             <p className={classes.col}> ${props.item.price}</p>
         </div>
             <div>
-               <Mealform></Mealform>
+               <Mealform onAddref={onAddrefhandler}></Mealform>
             </div>
        
     </div>
