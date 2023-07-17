@@ -2,14 +2,13 @@ import React from 'react'
 import classes from'./headercart.module.css'
 import { BsCartFill} from "react-icons/bs";
 
-const Cart = () => {
+const Cart = (props) => {
   return (
     <div>
-       <div className={classes.forcart}>
+       <div className={classes.forcart} onClick={props.onClick}>
             <span className={classes.icon}><BsCartFill/>  </span>
             <span className={classes.cartname}> Your cart</span>
-            <span className={classes.cartnumber}>0</span>
-              
+            <span className={classes.cartnumber}>0</span>    
         </div>
       
     </div>

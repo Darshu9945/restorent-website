@@ -9,7 +9,7 @@ const Cartitem = (props) => {
         price: 22.99,
       }]
   return (
-    <Model>
+    <Model onClick={props.onClose}>
     <div className={classes.cartitem}>
         {cartitem.map((item)=>{
                 return( 
@@ -20,7 +20,7 @@ const Cartitem = (props) => {
                     <h2>{item.price}</h2>
                 </header>
                 <div className={classes.button}>
-                    <button>Close</button>
+                    <button onClick={props.onClose}>Close</button>
                     <button>Order</button>
                 </div>
                </div>
