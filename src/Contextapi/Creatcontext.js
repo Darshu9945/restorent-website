@@ -19,6 +19,16 @@ return {
     Totalamount:addedtotalamout
 }
 }
+if(action.type==="REMOVE"){
+    const removeditems=state.item.filter((item)=>{
+        return item.price!=action.price
+    })
+const removedtotalamount=state.Totalamount-action.price
+    return {
+        item:removeditems,
+        Totalamount:removedtotalamount
+    }
+}
     return defaultstate
 }
  export const Creatcontext = (props) => {
@@ -26,8 +36,8 @@ return {
     const additemhandler=(items)=>{
       datadispacth({type:"ADD", item:items})
     }
-    const removeitemhandler=()=>{
-       datadispacth({type:"REMOVE"})
+    const removeitemhandler=(price)=>{
+       datadispacth({type:"REMOVE",price:price})
     }
     const creatdata={
         item:statedata.item,
