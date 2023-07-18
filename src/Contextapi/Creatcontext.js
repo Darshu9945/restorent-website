@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 import React from 'react'
 const Contextdata=React.createContext({
-    item:0,
+    item:[],
     Totalamount:0,
     additem:()=>{},
     removeitem:()=>{},
@@ -12,18 +12,59 @@ const defaultstate={
 }
 const reducerhandler=(state,action)=>{
 if(action.type==="ADD"){
-const addeditem=state.item.concat(action.item)
-const addedtotalamout=state.Totalamount+action.item.price*action.item.amount
+    const addedtotalamout=state.Totalamount+action.item.price*action.item.amount
+    let addeditemindex = state.item.findIndex((item)=> item.name===action.item.name)
+    
+const addeditem=state.item[addeditemindex]
+let updateitems;
+if(addeditem){
+    const updateitem={
+        ...addeditem,
+        amount:addeditem.amount+action.item.amount
+    }
+    updateitems=[...state.item]
+    updateitems[addeditemindex]=updateitem
+   
+}
+
+else{
+    const updateitem={...action.item}
+      updateitems=state.item.concat(action.item)
+
+}
+
 return {
-    item:addeditem,
+    item:updateitems,
     Totalamount:addedtotalamout
 }
 }
+
+
+
+
 if(action.type==="REMOVE"){
-    const removeditems=state.item.filter((item)=>{
-        return item.price!=action.price
+    let removedtotalamount=state.Totalamount-action.item.price*action.item.amount
+    let removeditems=[];
+    console.log(action.item)
+    if(action.item.amount>1){
+       state.item.map((items)=>{
+        if(items.name===action.item.name){
+            
+           const kb={...items,amount:items.amount-1}
+           removeditems.push(kb)
+          
+           removedtotalamount=state.Totalamount-action.item.price*1
+        }
+        else{
+            removeditems.push(items)
+        }
     })
-const removedtotalamount=state.Totalamount-action.price
+    }
+    else{
+       removeditems=state.item.filter((item)=>{
+            return item.price!=action.item.price
+        })
+    }
     return {
         item:removeditems,
         Totalamount:removedtotalamount
@@ -37,7 +78,7 @@ const removedtotalamount=state.Totalamount-action.price
       datadispacth({type:"ADD", item:items})
     }
     const removeitemhandler=(price)=>{
-       datadispacth({type:"REMOVE",price:price})
+       datadispacth({type:"REMOVE",item:price})
     }
     const creatdata={
         item:statedata.item,

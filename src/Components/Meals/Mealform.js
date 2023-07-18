@@ -6,12 +6,11 @@ const Mealform = (props) => {
  const updateamountref=useRef()
  const submithandler=(event)=>{
   event.preventDefault()
-  console.log(updateamountref)
+  
     const updatedamount=updateamountref.current.value
      const  updatedamountnumber=+updatedamount
    props.onAddref(updatedamountnumber)
  }
- 
   return (
     <div>
       <form onSubmit={submithandler}>

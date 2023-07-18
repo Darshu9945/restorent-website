@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef } from 'react'
+
 import classes from'./cartitem.module.css'
 import Model from '../UI/Model'
 import { useContext } from 'react'
@@ -7,13 +7,10 @@ import Contextdata from '../../Contextapi/Creatcontext'
 const Cartitem = (props) => {
     const ctx=useContext(Contextdata)
 
-   const refprice=useRef()
+   
 
         const setamout=ctx.item.length>0
-    const  onclickhandler=(ref)=>{
-      ctx.removeitem(refprice.current.value)
-      console.log(refprice.current.innerHTML)
-        }
+
 
      
   return (
@@ -23,18 +20,20 @@ const Cartitem = (props) => {
         {ctx.item.map((item)=>{
                 return( 
                    < React.Fragment>
-                <div className={classes.cartitem1}>
+                <div className={classes.cartitem1} key={item.id}>
                     <section>
-                     <p ref={refprice} value={item.name} className={classes.name}>
+                     <p  value={item.name} className={classes.name}>
                           {item.name}
                       </p>
-                      <span  className={classes.price}>{` $ ${item.price}`}</span>
-                      <span className={classes.count}>x1</span>
+                      <span  className={classes.price}>{` $ ${item.price.toFixed(2)}`}</span>
+                      <span className={classes.count}>x{item.amount}</span>
                     </section>
                     <section>
-                        <button>+</button>
                         <button onClick={()=>{
-                            ctx.removeitem(item.price)
+                            ctx.additem({...item,amount:1})
+                        }}>+</button>
+                        <button onClick={()=>{
+                            ctx.removeitem(item)
                         }}>-</button>
                     </section>
                </div>
