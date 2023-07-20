@@ -3,12 +3,14 @@ import React from 'react'
 const Contextdata=React.createContext({
     item:[],
     Totalamount:0,
+    product:[],
     additem:()=>{},
     removeitem:()=>{},
 })
 const defaultstate={
     item:[],
-    Totalamount:0
+    Totalamount:0,
+    product:[]
 }
 const reducerhandler=(state,action)=>{
 if(action.type==="ADD"){
@@ -35,10 +37,20 @@ else{
 
 return {
     item:updateitems,
-    Totalamount:addedtotalamout
+    Totalamount:addedtotalamout,
+    product:state.product
 }
 }
 
+if(action.type==="ADDDATA"){
+   const updateproduct=state.product.concat(action.item)
+   return{
+    item:state.item,
+    Totalamount:state.Totalamount,
+    product:updateproduct
+   }
+   
+}
 
 
 
@@ -67,24 +79,36 @@ if(action.type==="REMOVE"){
     }
     return {
         item:removeditems,
-        Totalamount:removedtotalamount
+        Totalamount:removedtotalamount,
+        product:state.product
     }
 }
     return defaultstate
 }
+
+
+
+
  export const Creatcontext = (props) => {
     const [statedata,datadispacth]=useReducer(reducerhandler,defaultstate)
+    console.log(statedata)
     const additemhandler=(items)=>{
       datadispacth({type:"ADD", item:items})
     }
-    const removeitemhandler=(price)=>{
-       datadispacth({type:"REMOVE",item:price})
+    const removeitemhandler=(item)=>{
+       datadispacth({type:"REMOVE",item:item})
+    }
+    const datahandler=(product)=>{
+        console.log(product)
+        datadispacth({type:"ADDDATA",item:product})
     }
     const creatdata={
         item:statedata.item,
         Totalamount:statedata.Totalamount,
+        product:statedata.product,
         additem:additemhandler,
         removeitem:removeitemhandler,
+        adddata:datahandler
     }
   return (
       <Contextdata.Provider value={creatdata}>{props.children}</Contextdata.Provider>

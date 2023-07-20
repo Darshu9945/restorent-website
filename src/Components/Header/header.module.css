@@ -1,6 +1,6 @@
 
 .forhead{
-    background-color: brown;
+    background-color: rgb(91, 43, 212);
     display: flex;
    width: 100%;
     height: 5rem;
@@ -31,6 +31,5 @@
     width: 110%;
     height: 100%;
     object-fit: cover;
-    transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
     
 }

@@ -13,6 +13,7 @@ const Mealitem = (props) => {
     })
 
   }
+  console.log(props.item)
   return (
     <div className={classes.main}>
        <div className={classes.meals}>
@@ -21,7 +22,8 @@ const Mealitem = (props) => {
             <p className={classes.col}> ${props.item.price}</p>
         </div>
             <div>
-               <Mealform onAddref={onAddrefhandler}></Mealform>
+               <Mealform onAddref={onAddrefhandler}
+               count={props.item.amount}></Mealform>
             </div>
        
     </div>

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import classes from './meallist.module.css'
 import Mealitem from './mealitem/Mealitem';
+import Contextdata from '../../Contextapi/Creatcontext';
 const DUMMY_MEALS = [
+
     {
       id: 'm1',
       name: 'Sushi',
@@ -28,11 +30,12 @@ const DUMMY_MEALS = [
     },
   ];
 const Meallist = () => {
+  const ctx=useContext(Contextdata)
   return (
     <div className={classes.meallist}>
-      {DUMMY_MEALS.map((item)=>{
+      {ctx.product.map((item)=>{
         return <Mealitem
-        key={item.id}
+        key={item.price}
         item={item}></Mealitem>
       })}
     </div>

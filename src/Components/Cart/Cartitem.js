@@ -25,7 +25,7 @@ const Cartitem = (props) => {
                      <p  value={item.name} className={classes.name}>
                           {item.name}
                       </p>
-                      <span  className={classes.price}>{` $ ${item.price.toFixed(2)}`}</span>
+                      <span  className={classes.price}>{` $ ${item.price}`}</span>
                       <span className={classes.count}>x{item.amount}</span>
                     </section>
                     <section>

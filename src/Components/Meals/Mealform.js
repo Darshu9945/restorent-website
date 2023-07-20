@@ -1,14 +1,17 @@
-import React,{useRef} from 'react'
+import React,{useContext, useRef, useState} from 'react'
 import Input from '../UI/Input'
 import classes from'./mealform.module.css'
+import Contextdata from '../../Contextapi/Creatcontext'
 
 const Mealform = (props) => {
+  const ctx=useContext(Contextdata)
+  const [count,setcount]=useState(props.count)
  const updateamountref=useRef()
  const submithandler=(event)=>{
   event.preventDefault()
-  
+  setcount((pre)=>pre-1)
     const updatedamount=updateamountref.current.value
-     const  updatedamountnumber=+updatedamount
+     const  updatedamountnumber=1
    props.onAddref(updatedamountnumber)
  }
   return (
@@ -21,13 +24,11 @@ const Mealform = (props) => {
             id:"amount",
             label:"Amount",
             type:"number",
-            max:4,
-            min:1,
             count:1,
-            defaultValue:1
+            value:count
         }
       }></Input>
-      <button type='submit' className={classes.button}> +  Add</button>
+      <button type='submit' className={classes.button}> Add to cart</button>
       </form>
     </div>
   )
