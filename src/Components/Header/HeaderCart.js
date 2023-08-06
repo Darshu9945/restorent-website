@@ -8,8 +8,9 @@ import Contextdata from '../../Contextapi/Creatcontext';
 const Cart = (props) => {
   const ctx=useContext(Contextdata)
   let cartamont=0
+  console.log(ctx.item,"cart")
   ctx.item.map((item)=>{
-    cartamont=cartamont+item.amount
+    cartamont=cartamont+item.amount1.L+item.amount1.M+item.amount1.S
   })
   return (
     <div>

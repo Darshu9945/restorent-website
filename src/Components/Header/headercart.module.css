@@ -2,7 +2,7 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color:  rgb(39, 22, 81);
+  background-color:  rgb(105, 74, 7);
   color: white;
   padding: 0.75rem 3rem;
   display: flex;
@@ -20,7 +20,7 @@
     margin-right: 0.5rem;
   }
   .forcart .cartnumber{
-    background-color: rgb(91, 43, 212);;
+    background-color: rgb(192, 157, 16);;
     padding: 0.25rem 1rem;
     border-radius: 25px;
     margin-left: 1rem;

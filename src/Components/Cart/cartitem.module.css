@@ -17,6 +17,13 @@ font-size: 1.1rem;
   margin-bottom: 12rem;
 
 }
+
+.info{
+  display: flex;
+  
+  justify-content: space-around;
+  gap: 6rem;
+}
 .cartitem1 .count {
 border: 0.5px solid rgb(151, 146, 146);
 padding: 0.1rem 0.6rem;

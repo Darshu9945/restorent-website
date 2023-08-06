@@ -8,11 +8,11 @@ const Header = (props) => {
   return (
     <header className={classes.header}>
         <div className={classes.forhead}>
-           <h1>Pharmahub</h1>
+           <h1>Tshirts</h1>
            <Cart onClick={props.onOpen} ></Cart>
         </div>
         <div className={classes.image}>
-        <img src="https://avante.biz/wp-content/uploads/Pharmacy-wallpaper-HD/Pharmacy-wallpaper-HD34.jpg" alt="gallery" />
+        <img src="https://image.freepik.com/free-photo/top-view-color-t-shirt-grey-wood-plank-background_30478-1351.jpg" alt="gallery" />
         </div>
     </header>
   )

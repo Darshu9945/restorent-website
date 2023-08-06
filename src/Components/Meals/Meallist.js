@@ -33,10 +33,10 @@ const Meallist = () => {
   const ctx=useContext(Contextdata)
   return (
     <div className={classes.meallist}>
-      {ctx.product.map((item)=>{
+      {ctx.product.map((item,index)=>{
         return <Mealitem
         key={item.price}
-        item={item}></Mealitem>
+        item={{...item,index:index}}></Mealitem>
       })}
     </div>
   )

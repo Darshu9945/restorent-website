@@ -22,7 +22,7 @@ const Mealform = (props) => {
       input={
         {
             id:"amount",
-            label:"Amount",
+            label:"Quantity",
             type:"number",
             count:1,
             value:count
